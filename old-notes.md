@@ -366,3 +366,112 @@ In summary, while the intention behind the proposed change is understandable, sw
 
 
 Task 5:
+
+
+
+
+Task 5: Monitoring Plan for TCI
+After analyzing both images of the architecture and task requirements, here is a monitoring plan to ensure a comprehensive overview of the system's health and functionality.
+
+Monitoring Items:
+EKS Cluster Health (TCI EFS Backend)
+
+Priority: P1
+Threshold: CPU usage > 80% or Memory usage > 75% over 5 minutes.
+Explanation: Ensures the backend services running in the EKS cluster are not overloaded, which can directly impact the application’s performance.
+RDS MariaDB (Primary DB) Health
+
+Priority: P1
+Threshold: CPU utilization > 85% or Free Storage < 20% over 5 minutes.
+Explanation: Database performance is critical for storing and retrieving survey data, and issues can lead to system-wide disruptions.
+Survey/Website Uptime (Portals Frontend)
+
+Priority: P1
+Threshold: Latency > 300ms or downtime for 1 minute.
+Explanation: The frontend is the entry point for users; high latency or downtime will directly affect customer experience.
+Survey Link Delivery (Tyntec and Hurricane MTA)
+
+Priority: P1
+Threshold: Failed delivery rate > 5% over 10 minutes.
+Explanation: Survey links are critical for user interactions. Monitoring the delivery ensures the system is functioning as expected.
+Druid Cluster for Survey Results
+
+Priority: P2
+Threshold: Query time > 1 second for 95% of queries over 5 minutes.
+Explanation: This ensures analytics performance remains optimal for administrators and users accessing survey results.
+Tableau/MySight Cluster Uptime (EC2 Instances)
+
+Priority: P2
+Threshold: Instance health check fails or CPU utilization > 90%.
+Explanation: Tableau integration is important for reporting and insights but not as critical as core functionalities.
+Email Delivery Rates (Hurricane MTA)
+
+Priority: P2
+Threshold: Failed email rate > 5% over 10 minutes.
+Explanation: Ensures reliable communication via email for survey links and notifications.
+SOAP/REST API Availability
+
+Priority: P1
+Threshold: API latency > 200ms or error rate > 2% over 5 minutes.
+Explanation: APIs are used by integrators, and downtime will affect external integrations.
+Data Voyager EC2 Instance Health
+
+Priority: P2
+Threshold: CPU utilization > 85% or instance health check fails.
+Explanation: Responsible for managing and processing data; issues here can cause backend disruptions.
+TCI Analytics Multi-Tenant Performance
+
+Priority: P2
+Threshold: Query time > 2 seconds for 95% of queries over 5 minutes.
+Explanation: Ensures analytics remain responsive for multi-tenant environments.
+Summary:
+This plan prioritizes critical components (P1) that directly affect user experience and system functionality, while lower-priority items (P2) are monitored for optimal performance. Each item has a specific threshold and reasoning to maintain system health and reliability.
+
+
+
+
+
+
+
+
+Gemini:
+
+
+Thank you for providing the second image!
+
+Here's a breakdown of CloudWatch alarms for the TCI system based on the architecture diagrams:
+
+High Priority (P1)
+
+TCI EPS Backend Error Rate (P1, > 1%, Critical Error Rate):
+
+Explanation: High error rates in the EPS backend can severely impact survey delivery and data collection. This alarm triggers when the error rate exceeds 1%, indicating a critical system issue.
+TCI ARHS Error Rate (P1, > 1%, Critical Error Rate):
+
+Explanation: Similar to the EPS backend, high error rates in the ARHS can disrupt survey responses and data analysis. This alarm triggers when the error rate exceeds 1%.
+MariaDB Database Connection Errors (P1, > 10 per minute, Connection Issues):
+
+Explanation: Frequent database connection errors can lead to data loss and service unavailability. This alarm triggers when the number of connection errors exceeds 10 per minute.
+EKS Cluster CPU Utilization (P1, > 80%, Resource Exhaustion):
+
+Explanation: High CPU utilization on the EKS cluster can cause slow response times and eventually lead to service degradation. This alarm triggers when CPU utilization exceeds 80%.
+EKS Cluster Memory Utilization (P1, > 70%, Resource Exhaustion):
+
+Explanation: High memory utilization on the EKS cluster can also cause performance issues and instability. This alarm triggers when memory utilization exceeds 70%.
+Medium Priority (P2)
+
+Survey Delivery Rate (P2, < 95%, Delivery Issues):
+
+Explanation: This alarm triggers when the survey delivery rate falls below 95%, indicating potential issues with delivery mechanisms or recipient addresses.
+Survey Response Rate (P2, < 50%, User Engagement):
+
+Explanation: This alarm triggers when the survey response rate drops below 50%, which could indicate issues with survey design or user engagement.
+Data Ingestion Rate (P2, < 90%, Data Loss):
+
+Explanation: This alarm triggers when the rate of data ingestion into the MariaDB database falls below 90%, potentially indicating data loss or processing delays.
+Additional Considerations
+
+Custom Metrics: Explore creating custom metrics for specific use cases, such as survey completion time, average response time, and API latency.
+Alarms on Logs: Set up alarms on log groups to detect specific error messages or patterns that might indicate underlying issues.
+Dynamic Thresholds: Implement dynamic thresholds that adjust based on historical data and traffic patterns.
+This monitoring plan provides a starting point for ensuring the reliability and performance of the TCI system. You can further customize and refine it based on your specific requirements and risk tolerance.
