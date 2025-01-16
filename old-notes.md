@@ -365,6 +365,9 @@ Conclusion
 In summary, while the intention behind the proposed change is understandable, switching to the "Minimum" statistic and lowering the threshold to 1% could have negative consequences. I recommend keeping the "Average" statistic, adjusting the threshold, and considering other parameters like the evaluation period and datapoints to alarm for a more effective and reliable alarm configuration.
 
 
+
+
+
 Task 5:
 
 
