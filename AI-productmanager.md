@@ -12,8 +12,6 @@ Code Structure-Extract Superclass, Extract Interface , Pull Up Method/Field, Pus
 
 Performance Optimization - Streaming , Lazy Initialization, Replace Recursive with Iterative
 
-
-
 Question: Can you explain your experience with developing AI-powered products?
 
 Answer: In my previous role, I led a team that developed an AI-driven recommendation system for an e-commerce platform. We used machine learning algorithms to analyze user behavior and provide personalized product recommendations, resulting in a 20% increase in conversion rates.
@@ -52,3 +50,8 @@ Answer: During an AI project, we encountered unexpected data quality issues that
 Question: How do you effectively communicate complex AI concepts to non-technical stakeholders?
 
 Answer: I believe in using clear and concise language when communicating complex concepts. I break down technical jargon into layman's terms and use visual aids, such as diagrams or prototypes, to aid understanding. I actively listen to stakeholders' questions and concerns, providing relevant examples to illustrate the benefits and challenges of AI solutions.
+
+
+indusind bank - my phone is 9963111687, i have paid the credit card payment just withing 2 Days of statement generated , but is fined with 27000 charges , and on top of it many collection agent followups. I tried to talk customer service , but IVR has no option to talk with anyone. I have mailed to multiple email ids - got response like "Service Reference Number 68421366" , did send many mails thereafter , but not getting any results. I am sorry to grab your attention in public forum , but i see no other option. So far indus experience been good , and this time its very disappointing. Please help.
+
+This issue is not resolved , there were some 1000 rs gap , one emi amound later generated , i paid 399000 of 4L , and charged 27000 rs for 1000, This insane , cruel , and I am going to close my relationship with indus bank and I am super sad - nobody cares mails , customer support is just to automated robot seems , I really wish indus bank become more human.
